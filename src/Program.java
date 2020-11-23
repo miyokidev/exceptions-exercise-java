@@ -2,6 +2,11 @@ public class Program {
 
 	public static void main(String[] args) {
 		
+		
+		//-------------------------------------------------------
+		// RUNTIME EXCEPTIONS
+		//-------------------------------------------------------
+		
 		// ArithmeticException: when attempting to divide by 0
 		try {
 			int test = 2/0;
@@ -71,6 +76,23 @@ public class Program {
 		} finally {
 			displayFinally();
 		}
+		
+		//-----------------------------------------------------------------------------------------------------
+		// The following comments are for ERRORS if you want to test one make sure that the other ones are commented or it
+		// will only stop to the first one.
+		//-------------------------------------------------------------------------------------------------------
+		
+		// ExceptionInInitializerError: when an initialization static blocks throws an exception and does not process it
+		// Uncomment below to test
+		//new StaticBlock();
+		
+		// StackOverflowError: when a method calls itself and there is no stop condition => infinite loop
+		// Uncomment below to test
+		//recursiveException();
+		
+		// NoClassDefFoundError: when a piece of code uses a class that is not available at runtime (for example, .class file
+		// deleted or missing library)
+		// No test setted up for this one but I think It's clear.
 	}
 	
 	// Method to display the type of the exception and its message.
@@ -95,4 +117,10 @@ public class Program {
 			throw new IllegalArgumentException("Give me a number between 8 to 10 pls");
 		}
 	}
+	
+	public static void recursiveException() {
+		recursiveException();
+	}
+	
+	
 }
